@@ -4,7 +4,7 @@ import Profile from "@/components/Profile";
 import Footer from "@/components/Footer";
 import { IBM_Plex_Sans_Thai } from "next/font/google";
 
-const inter = IBM_Plex_Sans_Thai({ weight: "400" });
+const inter = IBM_Plex_Sans_Thai({ subsets: ["thai"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Create Next App",

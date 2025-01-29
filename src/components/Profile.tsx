@@ -7,7 +7,7 @@ const Profile = () => {
   return (
     <div className="w-full flex space-x-4">
       <div>
-        <Image src="/doolittle-profile.jpg" alt="profile" width={60} height={60} className="rounded-full" />
+        <Image src="/doolittle-profile.jpg" alt="profile" width={60} height={60} className="rounded-full border" />
       </div>
       <div>
         <div className="text-2xl font-bold">{name}</div>

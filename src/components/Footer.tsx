@@ -30,7 +30,7 @@ const Footer = () => {
   ));
 
   return (
-    <div className="border-t py-4 space-y-2">
+    <div className="border-t pt-6 space-y-4">
       <h4 className="font-bold text-xl">Contact</h4>
       <div className="space-y-1">{contactList}</div>
     </div>

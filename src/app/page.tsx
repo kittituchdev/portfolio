@@ -49,7 +49,7 @@ const WorkExp = () => {
   ));
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-4">
       <div className="font-bold text-xl">Work Experience</div>
       <div className="space-y-4">{displayWorks}</div>
     </div>
@@ -115,7 +115,7 @@ const CoreSkills = () => {
     ));
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-4">
       <div className="font-bold text-xl">Core Skill</div>
       <div>
         <div>

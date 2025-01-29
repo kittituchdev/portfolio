@@ -8,10 +8,13 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
+      container: {
+        screens: {
+          sm: "640px",
+          md: "768px",
+          lg: "1024px"
+        }
+      }
     },
   },
   plugins: [],

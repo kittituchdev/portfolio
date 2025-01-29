@@ -1,101 +1,144 @@
-import Image from "next/image";
+import React from "react";
+import { IconBuilding } from "@tabler/icons-react";
+
+const WorkExp = () => {
+  const works = [
+    {
+      company: "Tisco Financial Group Public Company Limited",
+      start: "2024 June",
+      end: "Present",
+      role: "Full-stack Developer",
+      detail:
+        "Tisco Financial Group Public Company Limited is a banking company in Thailand. My responsibility is to develop an e-commerce platform that supports Tisco’s business. This platform allows for self-configuration of website layouts and purchasing flows tailored to each business.",
+    },
+    {
+      company: "Max Gadget Company Limited",
+      start: "2022 August",
+      end: "2024 May",
+      role: "Software Engineer, Team Lead",
+      detail:
+        "Max Gadget is a wholesale and retail company, also known as Remax Thailand. My responsibility was to develop in-house software to enhance sales and manage data, including a warehouse management system and a customer relationship management system. The tech stack used included Angular, ReactJS, and NestJS with MongoDB.",
+    },
+    {
+      company: "Litto Technology Company Limited",
+      start: "2020 May",
+      end: "2022 July",
+      role: "Software Engineer",
+      detail:
+        "Litto Technology is a startup tech company that developed an e-commerce platform for online purchasing and delivery. My responsibility was to develop both the front-end and back-end using the Angular framework and ExpressJS, integrated with Firebase Realtime Database.",
+    },
+  ];
+
+  const displayWorks = works.map((work, index) => (
+    <div key={index}>
+      <div className="flex items-stretch space-x-2">
+        <IconBuilding />
+        <div className="flex space-x-4 items-baseline">
+          <span className="font-bold">{work.company}</span>
+          <span className="italic text-sm">
+            {work.start} - {work.end}
+          </span>
+        </div>
+      </div>
+
+      <div>
+        <span className="italic text-base">{work.role}</span>
+      </div>
+      <p className="indent-8 whitespace-normal pt-2">{work.detail}</p>
+    </div>
+  ));
+
+  return (
+    <div className="space-y-2">
+      <div className="font-bold text-xl">Work Experience</div>
+      <div className="space-y-4">{displayWorks}</div>
+    </div>
+  );
+};
+
+const CoreSkills = () => {
+  const skills = [
+    {
+      name: "JavaScript",
+      category: "Programming Languages",
+    },
+    {
+      name: "TypeScript",
+      category: "Programming Languages",
+    },
+    {
+      name: "MongoDB",
+      category: "Databases & Tools",
+    },
+    {
+      name: "PostgreSQL",
+      category: "Databases & Tools",
+    },
+    {
+      name: "Angular",
+      category: "Databases & Tools",
+    },
+    {
+      name: "ReactJs",
+      category: "Databases & Tools",
+    },
+    {
+      name: "Express",
+      category: "Databases & Tools",
+    },
+    {
+      name: "NestJs",
+      category: "Databases & Tools",
+    },
+  ];
+
+  const programmingLanguageList = skills
+    .filter((skill) => skill.category == "Programming Languages")
+    .map((skill, index) => (
+      <span
+        key={index}
+        className="italic"
+      >
+        {index != 0 && ", "} {skill.name}
+      </span>
+    ));
+
+  const ToolList = skills
+    .filter((skill) => skill.category == "Databases & Tools")
+    .map((skill, index) => (
+      <span
+        key={index}
+        className="italic"
+      >
+        {index != 0 && ", "} {skill.name}
+      </span>
+    ));
+
+  return (
+    <div className="space-y-2">
+      <div className="font-bold text-xl">Core Skill</div>
+      <div>
+        <div>
+          <span className="font-bold">Programming Languages:</span>{" "}
+          {programmingLanguageList}
+        </div>
+        <div>
+          <span className="font-bold">Databases & Tools: </span> {ToolList}
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="space-y-10">
+      <p>
+        Hello, my name's <b>Grit</b>. I'm a software developer who likes to
+        learn and share knowledge with others.
+      </p>
+      <WorkExp />
+      <CoreSkills />
     </div>
   );
 }
